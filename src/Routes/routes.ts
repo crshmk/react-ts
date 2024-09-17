@@ -1,13 +1,15 @@
 import { lazy } from 'react'
 
+import makeRoute from './makeRoute'
+
+import { RouteInterface } from './types'
+
 const Home = lazy(() => import('@components/Home'))
 const Login = lazy(() => import('@components/Login'))
 const Dashboard = lazy(() => import('@components/Dashboard'))
 const Users = lazy(() => import('@components/Users'))
 
-import makeRoute from './makeRoute'
-
-export default [
+const routes: RouteInterface[] = [
   {
     path: '/',
     Component: Home
@@ -25,4 +27,6 @@ export default [
     path: '/users',
     Component: Users
   }
-].map(makeRoute)
+]
+
+export default routes.map(makeRoute)

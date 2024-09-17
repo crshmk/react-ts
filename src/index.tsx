@@ -21,6 +21,7 @@ if(!!document.fonts?.ready) {
     }
   }, 3000)
 
+  // @ts-ignore
   document.fonts.ready.then((fontFaceSet) => {
     if(!hasLoaded) {
       hasLoaded = true

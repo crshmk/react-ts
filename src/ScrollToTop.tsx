@@ -4,10 +4,9 @@
 import React, { Component, Fragment } from 'react'
 import { useLocation } from 'react-router-dom'
 
-class ScrollToTop extends Component {
-	componentDidUpdate(prevProps) {
+class ScrollToTop extends Component<ScrollToTopProps> {
+	componentDidUpdate(prevProps: ScrollToTopProps) {
 		if (this.props.pathname !== prevProps.pathname) {
-      console.log(this.props.pathname)
       setTimeout(() => {window.scrollTo(0, 0)}, 0)
 		}
 	}
@@ -21,6 +20,10 @@ export default function() {
   const { pathname } = useLocation()
   
   return <ScrollToTop pathname={pathname} />
+}
+
+interface ScrollToTopProps {
+  pathname: string
 }
 
 /*

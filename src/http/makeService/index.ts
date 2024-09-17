@@ -3,9 +3,9 @@ import makeAxios from './makeAxios'
 
 /**
  * Create an http service for an api
- * @param {String} baseURL 
+ * @param {string} baseURL 
  * 
- * type RequestMethod = (path: String, payload?: {any}) => Promise
+ * type RequestMethod = (path: string, payload?: {any}) => Promise
  * @returns { 
  *   get: RequestMethod, 
  *   post: RequestMethod, 
@@ -13,10 +13,10 @@ import makeAxios from './makeAxios'
  *   delete: RequestMethod 
  * }
  */
-const makeService = baseURL => {
+const makeService = (baseURL: string) => {
   const http = makeAxios(baseURL)
 
-  const get = (route, payload) => {
+  const get = (route: string, payload?: ObjectType) => {
     const params = qs.stringify(payload)
     return http.get(`${route}?${params}`)
   }

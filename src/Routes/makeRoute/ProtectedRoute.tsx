@@ -6,7 +6,7 @@ import useUser from '@store/useUser'
 import { tail } from 'ramda'
 import { isAbsent, isPresent } from 'ramjam'
 
-const ProtectedRoute = ({ children }) => {
+const ProtectedRoute: React.FC<WithChildren> = ({ children }) => {
   const { isFetchingUser, user } = useUser()
   const navigate = useNavigate()
   const { pathname, search } = useLocation()

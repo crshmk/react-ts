@@ -1,14 +1,21 @@
 import React, { createContext, useContext, useState } from 'react'
 
-const MessageContext = createContext()
+import { MessageContextType, ShowMessageType } from './types'
+
+const initContextValue: MessageContextType = {
+  showMessage: () => {},
+  errorMessage: '',
+  successMessage: ''
+}
+
+const MessageContext = createContext<MessageContextType>(initContextValue)
 const useMessage = () => useContext(MessageContext)
 
-export const MessageProvider = ({ children }) => {
+export const MessageProvider: React.FC<WithChildren> = ({ children }) => {
   const [errorMessage, setErrorMessage] = useState('')
   const [successMessage, setSuccessMessage] = useState('')
 
-  // (messageType: 'success' | 'error', message: String) > void
-  const showMessage = (messageType, message) => {
+  const showMessage: ShowMessageType = (messageType, message) => {
     const setMessage = messageType === 'error' 
     ? setErrorMessage 
     : setSuccessMessage

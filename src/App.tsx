@@ -12,8 +12,8 @@ import './index.css'
 const View = () => (
   <FadeIn>
     <div className="view">
-        <Nav />
-        <Routes />
+      <Nav />
+      <Routes />
     </div>
   </FadeIn>
 )

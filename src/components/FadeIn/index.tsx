@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 
 import './fade-in.css'
 
-const FadeIn = ({ children }) => {
+const FadeIn: React.FC<WithChildren> = ({ children }) => {
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {

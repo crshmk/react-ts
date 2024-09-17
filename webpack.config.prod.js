@@ -20,8 +20,8 @@ const vendorChunks = [
 module.exports = merge(common, {
   mode: 'production',
   entry: {
-    main: resolve('src/index.js'),
-    page: resolve('src/components/Page/index.js'),
+    main: '/src/index',
+    home: '/src/components/Home/index.jsx',
     vendor: vendorChunks
   },
   optimization: {

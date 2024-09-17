@@ -1,4 +1,4 @@
-This is a way to organize a React app with context for state management. If you can swim without a type jacket it might interest you. 
+This is a way to organize a React app with context for state management.
 
 ---
 
@@ -13,4 +13,6 @@ This is a way to organize a React app with context for state management. If you 
 - code splitting for prod builds
 - meta tags for social media 
 - simple rsync script for deployment
-- no TS
+
+No TS version [here](https://github.com/crshmk/webpack-react). 
+

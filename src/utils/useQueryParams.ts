@@ -7,7 +7,7 @@ const useQueryParams = () => {
   const [queryParams, setQueryParams] = useState({})
 
   useEffect(() => {
-    const newQueryParams = getQueryParams(window)
+    const newQueryParams: ObjectType = getQueryParams(window)
     setQueryParams(newQueryParams)
   }, [search])
 

@@ -4,7 +4,7 @@ import { MessageProvider } from './useMessage'
 import { UserProvider } from './useUser'
 import { UsersProvider } from './useUsers'
 
-const Providers = ({ children }) => (
+const Providers: React.FC<WithChildren> = ({ children }) => (
   <>
   <MessageProvider>
   <UserProvider>

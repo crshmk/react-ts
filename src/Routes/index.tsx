@@ -5,7 +5,7 @@ import routes from './routes'
 
 const Route = () => (
   <Routes>
-    {routes}
+    {routes as JSX.Element[]}
   </Routes>  
 )
 

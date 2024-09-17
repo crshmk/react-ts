@@ -3,9 +3,9 @@ import { NavLink } from 'react-router-dom'
 
 import './nav.css'
 
-import menuItems from './menuItems'
+import menuItems, { MenuItem } from './menuItems'
 
-const makeLink = ({ route, label }) => 
+const makeLink = ({ route, label }: MenuItem) => 
   <li key={label}><NavLink to={route}>{label}</NavLink></li>
 
 const menuLinks = menuItems.map(makeLink)

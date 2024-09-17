@@ -1,9 +1,11 @@
-import React, { Suspense, lazy } from 'react'
+import React, { Suspense } from 'react'
 import { Route } from 'react-router-dom'
+
+import { RouteInterface } from '../types'
 
 import ProtectedRoute from './ProtectedRoute'
 
-const makeRoute = ({ Component, path, isProtected }) => (
+const makeRoute = ({ Component, path, isProtected }: RouteInterface): JSX.Element => (
   <Route path={path} key={path} element={
     <Suspense fallback={null}>
       {!isProtected ? <Component /> : (

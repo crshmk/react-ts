@@ -5,17 +5,24 @@ import React, {
   useState 
 } from 'react'
 
+import { UsersContextType } from './types'
+
 import useMessage from '@store/useMessage'
 
 import fetchUsers from './fetchUsers'
 
-const UsersContext = createContext()
+const initUserContext: UsersContextType = {
+  users: []
+} 
+
+const UsersContext = createContext(initUserContext)
 const useUsers = () => useContext(UsersContext)
 
-export const UsersProvider = ({ children }) => {
+export const UsersProvider: React.FC<WithChildren> = ({ children }) => {
   const [users, setUsers] = useState([])
   const { showMessage } = useMessage()
   
+  // @ts-ignore
   useEffect(fetchUsers(setUsers, showMessage), [])
 
   const ctx = { users }

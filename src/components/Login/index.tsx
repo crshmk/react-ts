@@ -12,26 +12,29 @@ import { isPresent } from 'ramjam'
 const Login = () => {
   const { isFetchingUser, setUser, user } = useUser()
   const navigate = useNavigate()
-  const qp = useQueryParams()
+  const qp: { continue?: string } = useQueryParams()
 
   useEffect(() => {
       if(isPresent(user)) {
-        let route = isPresent(qp.continue) ? qp.continue : '/'
+        let route = isPresent(qp.continue) ? qp.continue as string : '/'
         navigate(route, { replace: true })
       }
     }, [user, isFetchingUser])
 
   const onSubmit = () => 
-    setUser({ id: 42 })
+    setUser({ name: 'jo' })
   
   return (
-    <div className="login-form">
-      <button 
-        tabIndex={0}
-        onKeyDown={onKeyDownEnter(onSubmit)}
-        onClick={onSubmit}
-      >log in</button>
+    <div>
+      <div className="login-form">
+        <button 
+          tabIndex={0}
+          onKeyDown={onKeyDownEnter(onSubmit)}
+          onClick={onSubmit}
+        >log in</button>
+      </div>
     </div>
+
   )
 }
 

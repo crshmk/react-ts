@@ -1,17 +1,17 @@
 import axios from 'axios'
 import { propOr } from 'ramda'
 
-const returnFetchedData = propOr({}, 'data')
+import {
+  ReturnFetchedDataType
+} from './http.types'
 
-function rejectErrors(res) {
+const returnFetchedData: ReturnFetchedDataType = propOr({}, 'data')
+
+function rejectErrors(res: any) {
   return Promise.reject(res)
 } 
 
-/**
- * @param {String} baseURL 
- * @returns {AxiosInstance}
- */
-const makeAxios = baseURL => {
+const makeAxios = (baseURL: string) => {
   const http = axios.create({
     baseURL,
     withCredentials: true,

@@ -1,17 +1,19 @@
-import { usersHttp } from '@http'
+import { usersHttp } from '../../http'
 import { isPresent } from 'ramjam'
+
+import { FetchUsersType } from './types'
 
 const errorMessage = 'Error fetching users'
 
-// (userId: String) => '/' | `/${userId}`
-const getRoute = userId => 
+const getRoute = (userId: string): string => 
     isPresent(userId) ? `/${userId}` : '/'
 
-const fetchUsers = (setUsers, showMessage) => 
-  (userId) => {
+const fetchUsers: FetchUsersType = (setUsers, showMessage) => 
+  (userId: string) => {
     const route = getRoute(userId)
 
     usersHttp.get(route)
+      // @ts-ignore
       .then(setUsers)
       .catch(() => showMessage('error', errorMessage))
   }
