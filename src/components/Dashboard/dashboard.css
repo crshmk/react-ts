@@ -1,0 +1,31 @@
+.dashboard .show-modal-btn {
+  cursor: pointer;
+  color: steelblue;
+}
+
+.dashboard .withmodal-wrapper {
+  width: 300px;
+  margin: 0 auto;
+  border: 1px solid steelblue;
+}
+
+.dashboard-modal-content {
+  position: relative;
+  height: 300px;
+  padding: 37px 17px;
+  background: #fefefe;
+}
+
+.dashboard-modal-content > span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 17px;
+  right: 17px;
+  width: 27px;
+  height: 27px;
+  border-radius: 999px;
+  border: 1px solid steelblue;
+  cursor: pointer;
+}
