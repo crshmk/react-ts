@@ -8,6 +8,12 @@ declare module '*.png' {
   export default value
 }
 
+type Empty<T> = 
+  T extends Array<infer U> ? [] : 
+  T extends object ? {} : 
+  T extends string ? '' : 
+  never
+
 type KeyboardEvent = React.KeyboardEvent<HTMLInputElement>
 
 type NoOp = () => {}

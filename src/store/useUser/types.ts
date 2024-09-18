@@ -1,19 +1,20 @@
-interface User {
-  id?: number
-  name?: string
-  email?: string
+type User = {
+  id: number
+  name: string
+  email: string
 }
 
-export interface UserContextType {
-  user: User
-  setUser: StateSetter<User>
+type UserState = Partial<User>
+
+export type UserContextType = {
+  user: UserState
+  setUser: StateSetter<UserState>
   isFetchingUser: boolean
   setIsFetchingUser: StateSetter<boolean>
 }
 
-const emptyUser: User = {} 
 export const initUserContext: UserContextType = {
-  user: emptyUser,
+  user: {},
   setUser: () => {},
   isFetchingUser: false,
   setIsFetchingUser: () => {}

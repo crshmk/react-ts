@@ -9,10 +9,16 @@ import onKeyDownEnter from '@utils/onKeyDownEnter'
 import useQueryParams from '@utils/useQueryParams'
 import { isPresent } from 'ramjam'
 
+const mockUser = { 
+  id: 42, 
+  name: 'jo', 
+  email: 'jo@co.com'
+}
+
 const Login = () => {
   const { isFetchingUser, setUser, user } = useUser()
   const navigate = useNavigate()
-  const qp: { continue?: string } = useQueryParams()
+  const qp = useQueryParams()
 
   useEffect(() => {
       if(isPresent(user)) {
@@ -21,8 +27,7 @@ const Login = () => {
       }
     }, [user, isFetchingUser])
 
-  const onSubmit = () => 
-    setUser({ name: 'jo' })
+  const onSubmit = () => setUser(mockUser)
   
   return (
     <div>
