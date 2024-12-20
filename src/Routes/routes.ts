@@ -4,6 +4,7 @@ import makeRoute from './makeRoute'
 
 import { RouteInterface } from './types'
 
+const Chat = lazy(() => import('@components/Chat'))
 const Home = lazy(() => import('@components/Home'))
 const Login = lazy(() => import('@components/Login'))
 const Dashboard = lazy(() => import('@components/Dashboard'))
@@ -13,6 +14,10 @@ const routes: RouteInterface[] = [
   {
     path: '/',
     Component: Home
+  },
+  {
+    path: '/chat',
+    Component: Chat
   },
   {
     path: '/dashboard',
