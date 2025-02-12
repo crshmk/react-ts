@@ -8,6 +8,8 @@ type QueryParamsType = {
   [key: string]: SerializableValue
 }
 
+type RequestMethod = 'get' | 'post' | 'put' | 'delete'
+
 const makeService = (baseURL: string) => {
   const http: AxiosInstance = makeAxios(baseURL)
 
@@ -24,7 +26,7 @@ const makeService = (baseURL: string) => {
     }
   }
 
-  const request = (method: string) => async <PayloadType, ResponseDataType>(
+  const request = (method: RequestMethod) => async <PayloadType, ResponseDataType>(
     path: string,
     payload?: PayloadType
   ): Promise<AxiosResponse<ResponseDataType>> => {

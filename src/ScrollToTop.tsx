@@ -22,12 +22,12 @@ export default function() {
   return <ScrollToTop pathname={pathname} />
 }
 
-interface ScrollToTopProps {
+type ScrollToTopProps = {
   pathname: string
 }
 
 /*
-causes flashing; use a class
+function components flash; use a class
 const ScrollToTop = ({ location }) => {
   useEffect(scroll, [location])
   return <Fragment />

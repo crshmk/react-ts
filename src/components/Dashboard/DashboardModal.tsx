@@ -2,7 +2,7 @@ import React from 'react'
 
 import withModal from '@components/withModal'
 
-const DashboardModal = ({ onHide }) => {
+const DashboardModal = ({ onHide }: { onHide: () => void }) => {
 
   return (
     <div className="dashboard-modal-content">
