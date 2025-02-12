@@ -9,6 +9,7 @@ This is a way to organize a React app using context for state management.
 - CSS modules 
 - Axios wrapper
 - socket.io 4 (connects to server setup [here](https://github.com/crshmk/express-setup))
+- Electron 34
 - basic utils, e.g. localStorage 
 - code splitting for prod builds
 - meta tags for social media 

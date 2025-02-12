@@ -10,7 +10,7 @@ const config = {
  // alwaysOnTop: true,
   width,
   height,
-  title: "React TS Electron",
+  title: "React App",
  // resizable: false,
 //  frame: false,
  // transparent: true,
