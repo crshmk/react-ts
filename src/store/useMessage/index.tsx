@@ -1,7 +1,5 @@
 import React, { createContext, useContext, useState } from 'react'
 
-import { MessageContextType, ShowMessageType } from './types'
-
 const initContextValue: MessageContextType = {
   showMessage: () => {},
   errorMessage: '',

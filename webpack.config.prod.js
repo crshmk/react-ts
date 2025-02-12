@@ -19,7 +19,7 @@ module.exports = merge(common, {
   mode: 'production',
   entry: {
     main: '/src/index',
-    home: '/src/components/Home/index.tsx',
+    home: '/src/components/Home/index.js',
     // add pages here
     vendor: vendorChunks
   },
