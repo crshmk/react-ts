@@ -51,13 +51,13 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.ts', '.tsx'], 
     alias: {
-      '@components': path.resolve(__dirname, 'src/components'),
-      '@constants': path.resolve(__dirname, 'src/constants'),
-      '@http': path.resolve(__dirname, 'src/http'),
-      '@img': path.resolve(__dirname, 'src/assets/img'),
-      '@src': path.resolve(__dirname, 'src'),
-      '@store': path.resolve(__dirname, 'src/store'),
-      '@utils': path.resolve(__dirname, 'src/utils')
+      '@components': resolve('src/components'),
+      '@constants': resolve('src/constants'),
+      '@http': resolve('src/http'),
+      '@img': resolve('src/assets/img'),
+      '@src': resolve('src'),
+      '@store': resolve('src/store'),
+      '@utils': resolve('src/utils')
     },
     modules: [
         path.join(__dirname, 'node_modules')

@@ -1,20 +1,25 @@
 import { useEffect, useState } from 'react'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 
-import { initQueryParamsState, QueryParamsState } from './types'
-
+import qs from 'qs'
 import { getQueryParams } from 'ramjam'
 
-const useQueryParams = () => {
-  const { search } = useLocation()
-  const [queryParams, setQueryParams] = useState<QueryParamsState>(initQueryParamsState)
+const useQueryParams = <T extends QueryParams>() => {
+  const { pathname, search } = useLocation()
+  const navigate = useNavigate()
+  const [queryParams, setQueryParams] = useState<T>({} as T)
 
   useEffect(() => {
-    const newQueryParams = getQueryParams(window)
+    const newQueryParams: T = getQueryParams<T>(window)
     setQueryParams(newQueryParams)
   }, [search])
 
-  return queryParams
+  const updateParams = (updates: T) => {
+    const queryString = qs.stringify({...queryParams, ...updates})  
+    navigate(`${pathname}?${queryString}`)
+  }
+
+  return { queryParams, search, updateParams }
 }
 
 export default useQueryParams

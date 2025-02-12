@@ -1,7 +1,5 @@
-export type QueryParams = {
-  continue?: string 
+type QueryParamOptions = 'continue' | 'list' | 'others' | 'here'
+
+type QueryParams = {
+  [K in QueryParamOptions]?: string  
 }
-
-export type QueryParamsState = Partial<QueryParams>
-
-export const initQueryParamsState: QueryParams = {}

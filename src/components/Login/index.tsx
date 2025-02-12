@@ -18,11 +18,11 @@ const mockUser = {
 const Login = () => {
   const { isFetchingUser, setUser, user } = useUser()
   const navigate = useNavigate()
-  const qp = useQueryParams()
+  const { queryParams } = useQueryParams()
 
   useEffect(() => {
       if(isPresent(user)) {
-        let route = isPresent(qp.continue) ? qp.continue as string : '/'
+        let route = isPresent(queryParams.continue) ? queryParams.continue as string : '/'
         navigate(route, { replace: true })
       }
     }, [user, isFetchingUser])

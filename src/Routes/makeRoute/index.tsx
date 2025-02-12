@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react'
+import React, { JSX, Suspense } from 'react'
 import { Route } from 'react-router-dom'
 
 import { RouteInterface } from '../types'

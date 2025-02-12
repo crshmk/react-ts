@@ -1,12 +1,8 @@
-const path = require('path')
-
 const webpack = require('webpack')
 const common = require('./webpack.config.common.js')
 
 const TerserPlugin = require('terser-webpack-plugin')
 const { merge } = require('webpack-merge')
-
-const resolve = filePath => path.resolve(__dirname, filePath)
 
 const vendorChunks = [
   'react', 
