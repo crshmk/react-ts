@@ -1,19 +1,19 @@
-This is a way to organize a React app with context for state management.
+This is a way to organize a React app using context for state management.
 
 ---
 
+- React 19 
 - Webpack 5
-- Jest 29 
 - Babel 7 with path aliasing
-- React 18 
-- React Router 6 with protected routes and route transitions
+- React Router 7 with protected routes and route transitions
 - CSS modules 
-- React Testing Library
 - Axios wrapper
-- socket.io (connects to sample server [here](https://github.com/crshmk/express-setup))
+- socket.io 4 (connects to server setup [here](https://github.com/crshmk/express-setup))
+- basic utils, e.g. localStorage 
 - code splitting for prod builds
 - meta tags for social media 
 - simple rsync script for deployment
-
-No TS version [here](https://github.com/crshmk/webpack-react). 
+- Jest 29 
+- React Testing Library
+- TypeScript with helpful globals 
 

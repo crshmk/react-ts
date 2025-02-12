@@ -1,19 +1,20 @@
 {
   "name": "react-ts",
   "version": "0.1.0",
-  "description": "React TypeScript setup for 2025",
+  "description": "React TypeScript Webpack setup for 2025",
   "main": "index.js",
   "scripts": {
     "build": "webpack --config ./webpack.config.prod.js",
-    "dev": "webpack s",
-    "start": "webpack s --config ./webpack.config.dev.js",
-    "test": "jest",
-    "serve": "./node_modules/.bin/webpack serve",
-    "images": "cp src/assets/images/favicon.ico dist/favicon.ico && cp src/assets/images/social-media.png dist/social-media.png",
+    "build-deploy": "npm run build && npm run images && ./deploy.sh",
     "deploy": "./deploy.sh",
-    "bd": "npm run build && npm run images && ./deploy.sh"
+    "dev": "webpack s",
+    "images": "cp src/assets/images/favicon.ico dist/favicon.ico && cp src/assets/images/social-media.png dist/social-media.png",
+    "serve": "./node_modules/.bin/webpack serve",
+    "start": "webpack s --config ./webpack.config.dev.js",
+    "test": "jest"
   },
   "keywords": [
+    "react",
     "webpack"
   ],
   "author": "Chris Hammock",
