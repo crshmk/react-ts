@@ -1,3 +1,7 @@
 *.DS_Store
 dist
 node_modules
+keys
+.env
+testfile.txt
+sftp-test.sh
