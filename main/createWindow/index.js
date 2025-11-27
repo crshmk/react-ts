@@ -8,7 +8,7 @@ let window = null
 
 const createWindow = () => {
   window = new BrowserWindow(config)
-  window.setTitle('Your Custom App Name')
+  window.setTitle('A new app')
 
   const filePath = path.join(__dirname, 'dist', 'index.html')
   window.loadURL('http://localhost:4204')  

@@ -3,18 +3,15 @@
   "version": "0.1.0",
   "description": "React TypeScript Webpack setup for 2025",
   "main": "main/index.js",
-  "productName": "React App",
+  "productName": "Some new app",
   "scripts": {
+    "bd": "npm run build && npm run deploy",
+    "build": "npm run build:web && npm run build:electron",
     "build:web": "webpack --config ./webpack.config.prod.js",
     "build:electron": "electron-builder",
-    "build-deploy": "npm run build && npm run images && ./deploy.sh",
-    "deploy": "./deploy.sh",
-    "dev": "webpack s",
-    "eapp": "concurrently -k \"BROWSER=none npm start\" \"npm:electron\"",
-    "electron:dev": "wait-on tcp:7000 && electron .",
-    "electron:pack": "electron-builder --dir",
-    "images": "cp src/assets/images/favicon.ico dist/favicon.ico && cp src/assets/images/social-media.png dist/social-media.png",
-    "serve": "./node_modules/.bin/webpack serve",
+    "deploy": "./scripts/deploy.sh",
+    "dev:electron": "wait-on tcp:7000 && electron .",
+    "images": "./scripts/images.sh",
     "start": "webpack s --config ./webpack.config.dev.js",
     "test": "jest"
   },
@@ -79,6 +76,9 @@
     ],
     "directories": {
       "output": "dist/electron"
+    },
+    "mac": {
+      "identity": null
     }
   }
 }
