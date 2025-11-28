@@ -69,6 +69,15 @@ type Primitive = string | number | boolean
  */ 
 type StateSetter<T> = React.Dispatch<React.SetStateAction<T>>
 
+interface Window {
+  ipc: {
+    send: (channel: string, ...args: any[]) => void
+    receive: (channel: string, cb: (...args: any[]) => void) => () => void
+    invoke?: (channel: string, ...args: any[]) => Promise<any>
+  }
+}
+
+
 /**
  * @example 
  *   React.FC<WithChildren<PropTypes>>
